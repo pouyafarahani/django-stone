@@ -7,6 +7,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # local apps
-    path('', include('home.urls')),
-    path('about/', include('about.urls')),
+    path('', include('apps.home.urls')),
+    path('about/', include('apps.about.urls')),
 ]
