@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from apps.product.models import ProductModel
+
 
 def HomeView(request):
-    return render(request, 'home/home.html')
+    products = ProductModel.objects.all()
+    return render(request, 'home/home.html', {'products': products})
