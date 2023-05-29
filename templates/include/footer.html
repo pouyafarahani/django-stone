@@ -1,0 +1,50 @@
+{% load static %}
+
+<footer class="py-10 bg-neutral-800 text-gray-100">
+    <div
+            class="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-6">
+        <div>
+            <div class="flex items-center mb-4 gap-4">
+                <img
+                        class="w-8 h-8 object-contain"
+                        src="{% static 'images/t_logo_m.png' %}"
+                        alt="محبوب"/>
+                <h2 class="font-bold text-xl">سنگ قبر محبوب</h2>
+            </div>
+            <p class="text-justify leading-8 text-gray-300 mb-2">
+                <span class="font-bold text-gray-100"> آدرس: </span>
+                <span>
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
+              استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در
+              ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز
+            </span>
+            </p>
+            <p class="text-justify leading-8 text-gray-300">
+                <span class="font-bold text-gray-100"> شماره تماس: </span>
+                <span class="font-dosis"> 09196043787 </span>
+            </p>
+        </div>
+        <div>
+            <h3 class="text-xl font-bold mb-4">ارسال پیام</h3>
+            <form class="w-full">
+                <label class="block w-full mb-3" aria-label="name">
+                    <input
+                            class="w-full bg-transparent border border-solid border-gray-500 focus:border-gray-300 rounded-lg py-3 px-4 transition-colors duration-300"
+                            type="text"
+                            placeholder="نام"/>
+                </label>
+                <label class="block w-full mb-3" aria-label="name">
+              <textarea
+                      rows="4"
+                      class="w-full resize-none bg-transparent border border-solid border-gray-500 focus:border-gray-300 rounded-lg py-3 px-4 transition-colors duration-300"
+                      type="text"
+                      placeholder="متن"></textarea>
+                </label>
+                <button
+                        class="w-full block text-center bg-purple-600 py-3 rounded-lg">
+                    ارسال
+                </button>
+            </form>
+        </div>
+    </div>
+</footer>

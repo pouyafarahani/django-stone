@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="{% static 'styles/styles.css' %}"/>
 </head>
 
+<body>
+
+{% include 'include/navbar.html' %}
+
 {% block content %}
 
 {% endblock content %}
+
+{% include 'include/footer.html' %}
+
+</body>
