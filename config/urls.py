@@ -8,4 +8,5 @@ urlpatterns = [
 
     # local apps
     path('', include('home.urls')),
+    path('about/', include('about.urls')),
 ]
