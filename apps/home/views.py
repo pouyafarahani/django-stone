@@ -1,11 +1,8 @@
-from django.views.generic import ListView
+from django.shortcuts import render
 
 from apps.product.models.product import ProductModel
 
 
-class HomeView(ListView):
-    model = ProductModel
-    context_object_name = 'products'
-    template_name = 'home/home.html'
-    # paginate_by = 16
-    paginate_by = 1
+def HomeView(request):
+    products = ProductModel.objects.all().order_by('-id')[:8]
+    return render(request, 'home/home.html', {'products': products})

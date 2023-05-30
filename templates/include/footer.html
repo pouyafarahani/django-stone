@@ -26,22 +26,24 @@
         </div>
         <div>
             <h3 class="text-xl font-bold mb-4">ارسال پیام</h3>
-            <form class="w-full">
+            <form class="w-full" action="{% url 'about:form' %}" method="post">
+                {% csrf_token %}
                 <label class="block w-full mb-3" aria-label="name">
                     <input
                             class="w-full bg-transparent border border-solid border-gray-500 focus:border-gray-300 rounded-lg py-3 px-4 transition-colors duration-300"
                             type="text"
-                            placeholder="نام"/>
+                            name="full_name"
+                            placeholder="نام و نام خانوادگی"/>
                 </label>
                 <label class="block w-full mb-3" aria-label="name">
               <textarea
                       rows="4"
                       class="w-full resize-none bg-transparent border border-solid border-gray-500 focus:border-gray-300 rounded-lg py-3 px-4 transition-colors duration-300"
                       type="text"
+                      name="body"
                       placeholder="متن"></textarea>
                 </label>
-                <button
-                        class="w-full block text-center bg-purple-600 py-3 rounded-lg">
+                <button class="w-full block text-center bg-purple-600 py-3 rounded-lg">
                     ارسال
                 </button>
             </form>
