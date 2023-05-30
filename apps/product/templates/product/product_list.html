@@ -1,9 +1,6 @@
 {% extends 'base.html' %}
-{% load humanize %}
-{% load static %}
 
 {% block content %}
-    {% include 'include/navbar.html' with header_name='سنگ مزار محبوب' %}
 
     <main class="flex flex-col items-stretch gap-28 py-16">
         <section class="px-4">
@@ -42,30 +39,28 @@
                 {% endfor %}
             </ul>
         </section>
-        <button class="pouya"><a href="#"> مشاهده همه </a></button>
-        {#        <ul class="flex items-center justify-center gap-1 font-dosis">#}
-        {#            {% if page_obj.has_previous %}#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 text-black rounded" href="?page={{ page_obj.previous_page_number }}">&rarr;</a>#}
-        {#                </li>#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 bg-purple-600 text-white rounded"#}
-        {#                       href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>#}
-        {#                </li>#}
-        {#            {% endif %}#}
-        {#            <li>#}
-        {#                <a class="py-1 px-2 bg-purple-600 text-white rounded" style="background-color: green!important;"#}
-        {#                   href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>#}
-        {#            </li>#}
-        {#            {% if page_obj.has_next %}#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 bg-purple-600 text-white rounded"#}
-        {#                       href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>#}
-        {#                </li>#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 text-black rounded" href="?page={{ page_obj.next_page_number }}">&larr;</a>#}
-        {#                </li>#}
-        {#            {% endif %}#}
-        {#        </ul>#}
-    </main>
+        <ul class="flex items-center justify-center gap-1 font-dosis">
+            {% if page_obj.has_previous %}
+                <li>
+                    <a class="py-1 px-2 text-black rounded" href="?page={{ page_obj.previous_page_number }}">&rarr;</a>
+                </li>
+                <li>
+                    <a class="py-1 px-2 bg-purple-600 text-white rounded"
+                       href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+                </li>
+            {% endif %}
+            <li>
+                <a class="py-1 px-2 bg-purple-600 text-white rounded" style="background-color: green!important;"
+                   href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>
+            </li>
+            {% if page_obj.has_next %}
+                <li>
+                    <a class="py-1 px-2 bg-purple-600 text-white rounded"
+                       href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+                </li>
+                <li>
+                    <a class="py-1 px-2 text-black rounded" href="?page={{ page_obj.next_page_number }}">&larr;</a>
+                </li>
+            {% endif %}
+        </ul>
 {% endblock content %}
