@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% include 'include/navbar.html' with header_name='تماس با ما' %}
+    
+    <nav class="px-4 py-6 bg-neutral-800 text-gray-200">
+        <ul class="flex justify-center items-center gap-6 max-w-7xl mx-auto">
+            <li>
+                <a class="text-gray-100 hover:text-purple-300 transition-colors duration-300" href="/">صفحه اصلی</a>
+            </li>
+            <li>
+                <a class="text-gray-100 hover:text-purple-300 transition-colors duration-300" href="/about">درباره
+                    ما</a>
+            </li>
+        </ul>
+    </nav>
     <main class="flex flex-col items-stretch gap-28 py-16 bg-gradient-to-br from-gray-100 to-gray-300">
         <section class="px-4">
             <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row gap-8 items-center">

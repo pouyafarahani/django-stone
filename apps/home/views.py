@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from apps.product.models import ProductModel
+from apps.product.models.product import ProductModel
 
 
 def HomeView(request):

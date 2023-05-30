@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import ProductModel
+from apps.product.models.product import ProductModel
 
 
 def ProductDetailView(request, pk):
