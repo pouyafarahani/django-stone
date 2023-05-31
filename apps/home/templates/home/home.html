@@ -12,7 +12,7 @@
                 {% for product in products %}
                     <li class="w-full flex flex-col items-stretch">
                         <a
-                                href="/product"
+                                href="{{ product.get_absolute_url }}"
                                 class="group flex flex-col items-stretch w-full relative z-0 overflow-hidden rounded-lg grow">
                             <div class="relative w-full aspect-square -z-[1] shrink-0">
                                 <img

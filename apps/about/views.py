@@ -1,8 +1,7 @@
 from django.contrib import messages
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from .forms import AboutForms
-from ..product.models.product import ProductModel
 
 
 def AboutView(request):
@@ -10,7 +9,6 @@ def AboutView(request):
 
 
 def AboutForm(request):
-    products = ProductModel.objects.all().order_by('-id')[:8]
     if request.method == 'POST':
         form = AboutForms(request.POST)
         if form.is_valid():
@@ -19,4 +17,4 @@ def AboutForm(request):
         else:
             messages.warning(request, 'لطفا اطلاعات رو به درستی پر کنید')
 
-    return render(request, 'home/home.html', {'products': products})
+    return redirect('home:name')

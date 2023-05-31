@@ -29,7 +29,7 @@
                         <span> قیمت: </span>
                         <span class="font-dosis">{{ products.price|intcomma:False }}</span>
                     </p>
-                    <p class="text-justify leading-8 text-gray-800 mb-8">
+                    <p class="text-justify leading-8 text-gray-800 mb-8 break-words">
                         {{ products.short_description|safe }}
                     </p>
                     <a href="{% url 'about:about' %}"
@@ -68,17 +68,19 @@
         </div>
 
         <div class="w-full max-w-2xl lg:max-w-7xl mx-auto px-4">
-            <div class="p-6 bg-white rounded-lg shadow">
+            <div class="p-6 bg-white rounded-lg shadow overflow-hidden">
                 <h3 class="font-bold text-2xl mb-3">توضیحات</h3>
-                <p class="leading-8 text-gray-800 text-justify mb-8">
+                <p class="leading-8 text-gray-800 text-justify mb-8 overflow-hidden">
                     {{ products.description|safe }}
                 </p>
-                <h3 class="font-bold text-2xl mb-3" style="margin-top: 25px">مشخصات سنگ</h3>
-                <div class="flex flex-row flex-wrap gap-2">
-                    {% for product in products.specifications.all %}
-                        <span class="py-2 px-6 bg-purple-500 text-sm text-gray-100 rounded-md">{{ product.title }}</span>
-                    {% endfor %}
-                </div>
+                {% if products.specifications.all %}
+                    <h3 class="font-bold text-2xl mb-3" style="margin-top: 25px">مشخصات سنگ</h3>
+                    <div class="flex flex-row flex-wrap gap-2">
+                        {% for product in products.specifications.all %}
+                            <span class="py-2 px-6 bg-purple-500 text-sm text-gray-100 rounded-md">{{ product.title }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
             </div>
         </div>
     </main>
