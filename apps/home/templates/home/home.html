@@ -45,29 +45,5 @@
             </ul>
         </section>
         <button class="pouya"><a href="{% url 'product:product_list' %}"> مشاهده همه </a></button>
-        {#        <ul class="flex items-center justify-center gap-1 font-dosis">#}
-        {#            {% if page_obj.has_previous %}#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 text-black rounded" href="?page={{ page_obj.previous_page_number }}">&rarr;</a>#}
-        {#                </li>#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 bg-purple-600 text-white rounded"#}
-        {#                       href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>#}
-        {#                </li>#}
-        {#            {% endif %}#}
-        {#            <li>#}
-        {#                <a class="py-1 px-2 bg-purple-600 text-white rounded" style="background-color: green!important;"#}
-        {#                   href="?page={{ page_obj.number }}">{{ page_obj.number }}</a>#}
-        {#            </li>#}
-        {#            {% if page_obj.has_next %}#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 bg-purple-600 text-white rounded"#}
-        {#                       href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>#}
-        {#                </li>#}
-        {#                <li>#}
-        {#                    <a class="py-1 px-2 text-black rounded" href="?page={{ page_obj.next_page_number }}">&larr;</a>#}
-        {#                </li>#}
-        {#            {% endif %}#}
-        {#        </ul>#}
     </main>
 {% endblock content %}

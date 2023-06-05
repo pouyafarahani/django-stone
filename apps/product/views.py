@@ -1,16 +1,23 @@
-from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 
 from apps.product.models.product import ProductModel
 
 
-def ProductDetailView(request, pk):
-    products = ProductModel.objects.get(pk=pk)
-    return render(request, 'product/product_detail.html', {'products': products})
+class ProductDetailView(DetailView):
+    model = ProductModel
+    template_name = 'product/product_detail.html'
+    context_object_name = 'product'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 
 class ProductListView(ListView):
     model = ProductModel
     context_object_name = 'products'
     template_name = 'product/product_list.html'
-    paginate_by = 2
+    paginate_by = 18
+
+    def get_queryset(self):
+        return ProductModel.objects.only('name', 'price', 'image', 'discount')
