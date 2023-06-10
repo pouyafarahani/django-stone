@@ -1,15 +1,32 @@
-from django.contrib import admin
-
 from .models.tombstone import TombstoneModel
-
+from .models.sandblast import SandblastModel
+from .models.wholesale import WholesaleModel
+from .models.inscription import InscriptionModel
 from .models.base_models.ForeignKey.specifications import SpecificationsModel
 
+from django.contrib import admin
 
-class SpecificationsModelInline(admin.TabularInline):
+
+class SpecificationsInline(admin.TabularInline):
     model = SpecificationsModel
     extra = 1
 
 
 @admin.register(TombstoneModel)
-class ProductModelAdmin(admin.ModelAdmin):
-    inlines = [SpecificationsModelInline]
+class TombstoneModelAdmin(admin.ModelAdmin):
+    inlines = [SpecificationsInline]
+
+
+@admin.register(InscriptionModel)
+class InscriptionAdmin(admin.ModelAdmin):
+    inlines = [SpecificationsInline]
+
+
+@admin.register(SandblastModel)
+class SandblastAdmin(admin.ModelAdmin):
+    inlines = [SpecificationsInline]
+
+
+@admin.register(WholesaleModel)
+class WholesaleAdmin(admin.ModelAdmin):
+    inlines = [SpecificationsInline]
