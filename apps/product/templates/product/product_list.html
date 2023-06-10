@@ -29,11 +29,13 @@
                                     src="{{ product.image.url }}"
                                     alt="tombstone"/>
                         </div>
-                        <span
-                                class="z-10 block font-bold absolute top-0 left-4 bg-purple-600 text-white px-4 py-2 text-xs rounded-b-md font-dosis"
-                                dir="ltr">
-                - 60%
+                        {% if product.percent %}
+                            <span
+                                    class="z-10 block font-bold absolute top-0 left-4 bg-purple-600 text-white px-4 py-2 text-xs rounded-b-md font-dosis"
+                                    dir="ltr">
+                - {{ product.percent }}%
               </span>
+                        {% endif %}
                         <div
                                 class="md:absolute inset-0 bg-neutral-800 md:bg-transparent md:bg-gradient-to-t from-black/90 to-transparent rounded-b-lg md:rounded-lg p-4 text-gray-100 flex flex-col justify-start md:justify-end items-start grow">
                             <h4 class="mb-1 font-bold md:text-lg">{{ product.name }}</h4>
