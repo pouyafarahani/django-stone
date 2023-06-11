@@ -1,4 +1,3 @@
-# مدل کتیبه
 from .base_models.base import BaseModel
 
 from django.db import models

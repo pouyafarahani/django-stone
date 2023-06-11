@@ -12,3 +12,4 @@ class BaseModel(models.Model):
 
     short_description = RichTextField(blank=True)
     description = RichTextField(blank=True)
+
