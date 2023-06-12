@@ -24,7 +24,7 @@ class TombstoneModel(models.Model):
     description = RichTextField(blank=True)
 
     def __str__(self):
-        return self.name
+        return f'{self.name} ==> {self.group}'
 
     def get_absolute_url(self):
         return reverse('product_detail', args=[self.pk])
