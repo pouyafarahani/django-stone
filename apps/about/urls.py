@@ -1,6 +1,6 @@
-from django.urls import path
-
 from .views import AboutView, AboutForm
+
+from django.urls import path
 
 app_name = 'about'
 
