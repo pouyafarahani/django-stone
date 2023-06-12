@@ -5,11 +5,11 @@ from django.urls import path, include
 from config import settings
 
 urlpatterns = [
-    # panel admin
-    path('admin/', admin.site.urls),
+                  # panel admin
+                  path('admin/', admin.site.urls),
 
-    # local apps
-    path('', include('apps.home.urls')),
-    path('about/', include('apps.about.urls')),
-    path('product/', include('apps.product.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+                  # local apps
+                  path('', include('apps.home.urls')),
+                  path('about/', include('apps.about.urls')),
+                  path('product/', include('apps.product.urls')),
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
