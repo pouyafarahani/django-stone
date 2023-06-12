@@ -1,7 +1,7 @@
 from django.db import models
+from django.urls import reverse
 
 from ckeditor.fields import RichTextField
-from django.urls import reverse
 
 
 class TombstoneModel(models.Model):
