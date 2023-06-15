@@ -41,7 +41,7 @@
                     {% endfor %}
                 </ul>
             </section>
-            <button class="pouya"><a href=""> مشاهده همه </a></button>
+            <button class="pouya"><a href="{% url 'product_list' "tombstone" %}"> مشاهده همه </a></button>
         {% endif %}
 
         {% if inscription %}
@@ -83,7 +83,7 @@
                     {% endfor %}
                 </ul>
             </section>
-            <button class="pouya"><a href=""> مشاهده همه </a></button>
+            <button class="pouya"><a href="{% url 'product_list' "inscription" %}"> مشاهده همه </a></button>
         {% endif %}
 
         {% if sandblast %}
@@ -125,7 +125,7 @@
                     {% endfor %}
                 </ul>
             </section>
-            <button class="pouya"><a href=""> مشاهده همه </a></button>
+            <button class="pouya"><a href="{% url 'product_list' "sandblast" %}"> مشاهده همه </a></button>
         {% endif %}
 
         {% if wholesale %}
@@ -167,7 +167,7 @@
                     {% endfor %}
                 </ul>
             </section>
-            <button class="pouya"><a href=""> مشاهده همه </a></button>
+            <button class="pouya"><a href="{% url 'product_list' "wholesale" %}"> مشاهده همه </a></button>
         {% endif %}
 
     </main>
