@@ -5,7 +5,7 @@ from django.views.decorators.cache import cache_page
 from apps.product.models import TombstoneModel
 
 
-@cache_page(600)
+#@cache_page(3)
 def home_view(request):
     try:
         tombstone = TombstoneModel.objects.filter(group='tombstone')[:4]
