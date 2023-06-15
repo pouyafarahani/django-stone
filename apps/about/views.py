@@ -1,9 +1,11 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.views.decorators.cache import cache_page
 
 from .forms import AboutForms
 
 
+@cache_page(600)
 def AboutView(request):
     return render(request, 'about/about.html')
 
