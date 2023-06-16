@@ -19,4 +19,4 @@ def AboutForm(request):
         else:
             messages.warning(request, 'لطفا اطلاعات رو به درستی پر کنید')
 
-    return redirect('home:name')
+    return redirect('home:home')
