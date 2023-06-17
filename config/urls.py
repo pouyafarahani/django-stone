@@ -6,7 +6,7 @@ from config import settings
 
 urlpatterns = [
                   # panel admin
-                  path('admin/', admin.site.urls),
+                  path('armin/', admin.site.urls),
 
                   # local apps
                   path('', include('apps.home.urls')),

@@ -7,7 +7,7 @@ from django.utils.decorators import method_decorator
 from .models import TombstoneModel
 
 
-@cache_page(600)
+@cache_page(200)
 def product_list(request, slug):
     try:
         products = TombstoneModel.objects.filter(group=slug)
@@ -17,7 +17,7 @@ def product_list(request, slug):
         HttpResponse('این محصول وجود ندارد')
 
 
-@method_decorator(cache_page(600), name='dispatch')
+@method_decorator(cache_page(200), name='dispatch')
 class ProductDetailView(DetailView):
     model = TombstoneModel
     template_name = 'product/product_detail.html'

@@ -5,7 +5,7 @@ from django.views.decorators.cache import cache_page
 from .forms import AboutForms
 
 
-@cache_page(600)
+@cache_page(400)
 def AboutView(request):
     return render(request, 'about/about.html')
 
