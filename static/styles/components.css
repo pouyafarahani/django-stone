@@ -1,0 +1,9 @@
+.pouya {
+    --tw-bg-opacity: 1;
+    background-color: rgb(147 51 234/var(--tw-bg-opacity));
+    width: fit-content;
+    padding: 0.5rem 2rem;
+    border-radius: 9999px;
+    margin: 0 auto;
+    color: white;
+}

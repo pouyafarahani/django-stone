@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'ae9#9_q1s&1z$g1)t^eza0^78ye*)-74ys311vzv&z8l)i+5(c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -68,8 +68,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PORT': '5432',
+        'HOST': 'localhost',
+        'PASSWORD': 'postgres',
     }
 }
 
@@ -121,8 +125,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-
-# production
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-SESSION_COOKIE_SECURE = True
